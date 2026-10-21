@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#171338">
+<title>Happy Birthday Sabbu ♡</title>
+<style>
+:root{--night:#171338;--night2:#282052;--pink:#ff9fc8;--cream:#fff3df;--yellow:#ffd94f;--blue:#3568ef;--ink:#25234f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.screen{min-height:100svh;display:none;position:relative;overflow:hidden;padding:24px 20px 92px;align-items:center;justify-content:center;flex-direction:column;text-align:center}
+.screen.active{display:flex;animation:fade .55s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75;font-weight:800}
+h1,h2,p{margin-top:0}
+h1{font-family:Georgia,serif;font-size:clamp(2.6rem,11vw,4.6rem);line-height:.98;letter-spacing:-.04em;margin:16px 0}
+h2{font-family:Georgia,serif;font-size:clamp(2rem,8vw,3rem);line-height:1.05;margin:12px 0}
+p{line-height:1.65}
+.small{font-size:.9rem;opacity:.8}
+.btn{border:0;border-radius:999px;padding:14px 22px;background:var(--yellow);color:#28204e;font-weight:850;box-shadow:0 7px 0 #b88726;transition:transform .15s,box-shadow .15s}
+.btn:active{transform:translateY(4px);box-shadow:0 3px 0 #b88726}
+.btn.secondary{background:#fff0e8;box-shadow:0 6px 0 #d88ab0}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;background:#fff8df;border-radius:50%;opacity:.8;animation:twinkle 2.4s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:.2;transform:scale(.55)}}
+.moon{position:absolute;top:8%;left:9%;font-size:4.3rem;filter:drop-shadow(0 0 18px #ffd84b88);transform:rotate(-18deg)}
+.sparkle{position:absolute;right:9%;top:15%;font-size:2.2rem;color:var(--yellow)}
+/* opening phone */
+#opening{background:radial-gradient(circle at 75% 18%,#ffdc53 0 15%,transparent 15.5%),linear-gradient(140deg,#3165ed,#1742bd 65%,#f68cbd 65%);color:#fff}
+.phone{width:min(100%,370px);min-height:590px;border:5px solid #17276e;border-radius:48px;background:linear-gradient(155deg,#2e65e9 0 61%,#f78cbe 61%);padding:26px 18px 22px;box-shadow:0 15px 0 #101c52,0 28px 60px #070b2b66;position:relative;z-index:1}
+.notch{width:110px;height:27px;border-radius:20px;background:#17276e;margin:-11px auto 28px}
+.date-pill{display:inline-block;background:#514d58b8;border-radius:30px;padding:5px 14px;font-size:.82rem;font-weight:800}
+.clock{font-size:clamp(4.8rem,21vw,6.2rem);font-weight:850;line-height:1.15;letter-spacing:-.07em;text-shadow:0 3px #16215c;margin:10px 0 20px}
+.notice{background:#fff5f4;color:#20234f;border:3px solid #17276e;border-radius:27px;padding:13px 14px;margin:12px 0;text-align:left;box-shadow:0 5px 0 #17276e;display:flex;gap:12px;align-items:flex-start}
+.notice-icon{width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:#ffda3e;border:2px solid #17276e;display:grid;place-items:center;font-size:1.35rem}
+.notice strong{display:block;font-size:.9rem}
+.notice span{display:block;font-size:.77rem;color:#5e6084;letter-spacing:.08em;font-weight:800}
+.notice p{font-size:.91rem;line-height:1.4;margin:2px 0 0}
+.unlock{display:flex;align-items:center;gap:10px;border:2px solid #17276e;background:#ffffff55;border-radius:50px;margin-top:22px;padding:6px 18px 6px 6px;color:#fff;width:100%;min-height:70px}
+.unlock .circle{height:54px;width:54px;display:grid;place-items:center;border-radius:50%;background:#fff9ef;color:#fa5e6c;font-size:1.7rem;font-weight:900;flex-shrink:0}
+.unlock em{font-family:Georgia,serif;font-weight:800;font-size:1.05rem;margin:auto}
+.decor-heart{position:absolute;left:-4px;bottom:15px;font-size:3rem;transform:rotate(-18deg)}
+/* secret room */
+#room{background:radial-gradient(ellipse at 50% 42%,#383064 0,#211a4b 47%,#12102e 100%)}
+.pull-string{position:absolute;right:13%;top:0;height:210px;width:3px;background:#d6c6a0;transform-origin:top;animation:sway 3s ease-in-out infinite alternate}
+.pull-string:after{content:"";position:absolute;bottom:0;left:-26px;width:52px;height:64px;background:var(--yellow);border:3px solid #31245e;border-radius:50%;box-shadow:0 0 20px #ffd94f66}
+.pull-label{position:absolute;right:8%;top:165px;font-size:.75rem;color:#30204c;font-weight:900;z-index:2;transform:rotate(-7deg)}
+@keyframes sway{to{transform:rotate(3deg)}}
+#room h1{font-size:clamp(2.7rem,11vw,4.3rem);max-width:520px}
+.script{font-family:"Brush Script MT",cursive;font-size:2.4rem;color:var(--yellow);margin-bottom:12px}
+.glow{color:#fff0d9;text-shadow:0 0 22px #ffb6db55}
+.card{width:min(100%,470px);background:#fff6e9;color:#30264e;border-radius:28px;padding:24px;box-shadow:0 12px 0 #b66a9a;margin:14px 0}
+.letter{background:#fff5e5;color:#4a3454;border:1px solid #ffd4e5;border-radius:10px 26px 10px 26px;padding:27px 23px;text-align:left;box-shadow:0 15px 45px #0003;max-width:500px;width:100%;position:relative}
+.letter:before{content:"♡";position:absolute;right:18px;top:10px;font-size:2rem;color:#f178aa}
+.letter p{font-family:Georgia,serif;font-size:1.08rem}
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%,450px);margin:18px 0}
+.memory{aspect-ratio:4/5;border-radius:15px;background:linear-gradient(145deg,#ffbad8,#ffedc4);color:#6b3c66;border:4px solid #fff3e5;box-shadow:0 6px 0 #9c5a92;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:10px;overflow:hidden}
+.memory .emoji{font-size:2.5rem}
+.memory b{font-family:Georgia,serif;font-size:1.05rem;margin-top:8px}
+.memory small{font-size:.75rem;margin-top:4px}
+.memory input{width:100%;font-size:.7rem;margin-top:8px}
+.final-heart{font-size:6rem;filter:drop-shadow(0 0 28px #ff78b4);animation:beat 1.1s infinite}
+@keyframes beat{50%{transform:scale(1.12)}}
+.progress{position:fixed;z-index:10;bottom:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;background:#fff0dfed;border:2px solid #f3d4c2;border-radius:999px;padding:9px 12px;box-shadow:0 6px 20px #0002}
+.dot{width:9px;height:9px;border-radius:50%;background:#c7b9c4}
+.dot.on{width:25px;border-radius:9px;background:#ff5868}
+.navbtn{border:0;background:#ffb3a6;color:white;border-radius:50%;width:39px;height:39px;font-size:1.3rem;font-weight:900}
+.navbtn:disabled{opacity:.35}
+#toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);background:#fff5e8;color:#38264f;border-radius:20px;padding:10px 15px;font-size:.85rem;box-shadow:0 5px 20px #0003;display:none;z-index:20;max-width:90%;width:max-content}
+.confetti{position:fixed;top:-20px;z-index:30;pointer-events:none;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}
+@media(min-width:700px){.screen{padding-top:40px}.phone{min-height:610px}.notice p{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<section class="screen active" id="opening">
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="date-pill" id="dateLabel">TODAY IS YOUR DAY ♡</div>
+    <div class="clock" id="clock">00:00</div>
+    <div class="notice"><div class="notice-icon">🎂</div><div><span>BIRTHDAY CLUB · NOW</span><strong>It's officially your day, Sabbu</strong><p>Level unlocked: another year of being wonderful.</p></div></div>
+    <div class="notice"><div class="notice-icon">💌</div><div><span>ONE IMPORTANT MESSAGE</span><strong>Sabbu, someone loves you a lot</strong><p>Your surprise is waiting just beyond this screen.</p></div></div>
+    <div class="notice"><div class="notice-icon">✨</div><div><span>REMINDER · ALWAYS</span><strong>Main character energy</strong><p>Today, the universe gets to celebrate you.</p></div></div>
+    <button class="unlock" onclick="go(1)" aria-label="Unlock the birthday surprise"><span class="circle">›</span><em>tap to unlock</em></button>
+    <div class="decor-heart">❤️</div>
+  </div>
+  <p class="small" style="margin-top:34px">A tiny universe, made just for you, Sabbu.</p>
+</section>
+
+<section class="screen" id="room">
+  <div class="stars" aria-hidden="true"></div><div class="moon">🌙</div><div class="sparkle">✧</div>
+  <div class="pull-string"></div><div class="pull-label">pull me ↓</div>
+  <div class="script">Pssst…</div>
+  <h1 class="glow">The room is waiting for you.</h1>
+  <p style="max-width:330px;color:#d7cce8;font-size:1.05rem">Sabbu, someone left the lights off just for you. There is a little magic in here.</p>
+  <button class="btn" onclick="go(2)" style="margin-top:20px">I'm coming in ♡</button>
+</section>
+
+<section class="screen" id="letterScreen">
+  <div class="stars" aria-hidden="true"></div><div class="eyebrow">A little note from my heart</div>
+  <h2>For my favourite Sabbu</h2>
+  <div class="letter">
+    <p>To my Sabbu, ♡</p>
+    <p>Happy Birthday, Sabbu. I hope this new chapter brings you peaceful mornings, reasons to laugh until your cheeks hurt, and beautiful moments you wish could last a little longer.</p>
+    <p>You deserve to feel loved not only today, but on the ordinary days too — when you're tired, when things feel difficult, and when you need someone in your corner.</p>
+    <p>Thank you for being you. If I could make one wish for your birthday, it would be that you see yourself through my eyes, even for a moment.</p>
+    <p>With all my love,<br><strong>Yours, always ♡</strong></p>
+  </div>
+  <p class="small">You can edit this message in the HTML to make it sound more like you.</p>
+  <button class="btn" onclick="go(3)">Our little memories →</button>
+</section>
+
+<section class="screen" id="memories">
+  <div class="eyebrow">Little moments, big feelings</div>
+  <h2>My favourite kind of memories</h2>
+  <p class="small" style="max-width:330px">Replace these placeholders with your own photos and captions.</p>
+  <div class="memory-grid">
+    <label class="memory"><span class="emoji">📸</span><b>Our first memory</b><small>A moment I'll keep</small><input type="file" accept="image/*" aria-label="Choose photo for memory one" onchange="previewPhoto(this,0)"></label>
+    <label class="memory"><span class="emoji">🌷</span><b>Your smile</b><small>My favourite view</small><input type="file" accept="image/*" aria-label="Choose photo for memory two" onchange="previewPhoto(this,1)"></label>
+    <label class="memory"><span class="emoji">🌙</span><b>Our little world</b><small>Just us being us</small><input type="file" accept="image/*" aria-label="Choose photo for memory three" onchange="previewPhoto(this,2)"></label>
+    <label class="memory"><span class="emoji">💗</span><b>More to come</b><small>Our story continues</small><input type="file" accept="image/*" aria-label="Choose photo for memory four" onchange="previewPhoto(this,3)"></label>
+  </div>
+  <button class="btn" onclick="go(4)">One last thing…</button>
+</section>
+
+<section class="screen" id="final">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="eyebrow">Your birthday wish</div>
+  <div class="final-heart">💗</div>
+  <h1 class="glow">Sabbu, you are my favourite plot twist.</h1>
+  <p style="max-width:350px;color:#e5d8f2">Whatever this next year brings, I hope it gives you a thousand reasons to smile. And I hope I get to be there for some of them.</p>
+  <div class="card"><div style="font-size:2rem">🎂 ✨ 💌</div><strong>Happy Birthday, Sabbu.</strong><p style="margin:8px 0 0">Today is about you. Always remember how special you are.</p></div>
+  <button class="btn" onclick="celebrate()">Tap for a little more magic ✨</button>
+  <button class="btn secondary" onclick="go(0)" style="margin-top:18px">Replay the surprise ↺</button>
+  <p class="small" style="margin-top:25px">Made with love, just for you. ♡</p>
+</section>
+
+<div class="progress" aria-label="Website navigation">
+  <button class="navbtn" id="prev" onclick="go(current-1)" aria-label="Previous screen">‹</button>
+  <div id="dots" style="display:flex;gap:7px;padding:0 7px"></div>
+  <button class="navbtn" id="next" onclick="go(current+1)" aria-label="Next screen">›</button>
+</div>
+<div id="toast" role="status"></div>
+<script>
+const ids=['opening','room','letterScreen','memories','final'];
+let current=0;
+function go(n){
+  if(n<0||n>=ids.length)return;
+  document.getElementById(ids[current]).classList.remove('active');
+  current=n;document.getElementById(ids[current]).classList.add('active');
+  document.getElementById('prev').disabled=current===0;
+  document.getElementById('next').disabled=current===ids.length-1;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===current));
+  if(current===4) setTimeout(celebrate,250);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const dots=document.getElementById('dots');
+ids.forEach((_,i)=>{const d=document.createElement('span');d.className='dot'+(i===0?' on':'');d.title='Screen '+(i+1);d.onclick=()=>go(i);dots.appendChild(d)});
+function clock(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',hour12:false});}
+clock();setInterval(clock,30000);
+document.getElementById('dateLabel').textContent=new Date().toLocaleDateString([], {weekday:'long',day:'numeric',month:'long'}).toUpperCase();
+function makeStars(){
+ document.querySelectorAll('.stars').forEach(layer=>{
+  if(layer.children.length)return;
+  for(let i=0;i<48;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.opacity=(.25+Math.random()*.7);layer.appendChild(s);}
+ });
+}
+makeStars();
+function previewPhoto(input,index){
+ const file=input.files&&input.files[0];if(!file)return;
+ const card=input.closest('.memory');const reader=new FileReader();
+ reader.onload=e=>{card.style.backgroundImage=`url("${e.target.result}")`;card.style.backgroundSize='cover';card.style.backgroundPosition='center';card.style.color='#fff';card.style.textShadow='0 2px 8px #000';card.querySelector('.emoji').style.display='none';card.querySelector('small').textContent='Photo selected on this device';};
+ reader.readAsDataURL(file);
+}
+function celebrate(){
+ const symbols=['💗','💖','✨','💕','🌸','⭐'];
+ for(let i=0;i<32;i++){const el=document.createElement('span');el.className='confetti';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(16+Math.random()*20)+'px';el.style.animationDelay=(Math.random()*.9)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),4500);}
+ const t=document.getElementById('toast');t.textContent='If I could gift you one thing, it would be seeing how loved you are. ♡';t.style.display='block';setTimeout(()=>t.style.display='none',3600);
+}
+</script>
+</body>
+</html>
